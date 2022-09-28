@@ -62,7 +62,12 @@ class HomePage extends StatelessWidget {
           },
         );
       case TargetPlatform.iOS:
-        return Container();
+        return UiKitView(
+          viewType: viewType,
+          layoutDirection: TextDirection.ltr,
+          creationParams: creationParams,
+          creationParamsCodec: const StandardMessageCodec(),
+        );
       default:
         throw UnsupportedError('error');
     }
